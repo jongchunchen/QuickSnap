@@ -26,6 +26,15 @@ namespace CardGames
 			{
 				myGame.Start ();
 			}
+			if (myGame.IsStarted) {
+				if (SwinGame.KeyTyped (KeyCode.vk_LSHIFT) && SwinGame.KeyTyped (KeyCode.vk_RSHIFT)) {
+
+				} else if (SwinGame.KeyTyped (KeyCode.vk_LSHIFT)) {
+					myGame.PlayerHit (0);
+				} else if (SwinGame.KeyTyped (KeyCode.vk_RSHIFT)) {
+					myGame.PlayerHit (1);
+				}
+			}
 		}
 
 		/// <summary>
@@ -61,11 +70,10 @@ namespace CardGames
 		/// Updates the game -- it should flip the cards itself once started!
 		/// </summary>
 		/// <param name="myGame">The game to be updated...</param>
-		private static void UpdateGame(Snap myGame)
+		private static void UpdateGame (Snap myGame)
 		{
-			myGame.Update(); // just ask the game to do this...
+			myGame.Update (); // just ask the game to do this...
 		}
-
         public static void Main()
         {
             //Open the game window
